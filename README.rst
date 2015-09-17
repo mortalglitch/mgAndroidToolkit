@@ -5,6 +5,7 @@ interacting with Android based devices.
 Current Requirements:
 - ADB (Android Debugging Bridge): This must be set up as a path export or environment variable.
 - Python 2.7.6: This is the version I used but it may be compatible with other variants of Python 2
+- Currently the attached device will have to have the ADB RSA key accepted prior to use.
 
 Notes:
 It's far from complete and I will probably end up rewriting the structure several times.

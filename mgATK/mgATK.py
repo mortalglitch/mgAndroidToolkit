@@ -4,11 +4,12 @@ import os
 import time
 import installapk
 import uninstallapk
+import utility
 
 def buildMenu():
     os.system('cls' if os.name == 'nt' else 'clear')
     print "Welcome to the mgAndroidToolkit V.09171501"
-    print "This system will automate some simple functionality for Android Testing\n"    
+    print "This system will automate some simple functionality for Android Testing\n"
     print "Options: (Not all are functioning yet and just act as placeholders)\n"
     print "1.) Reboot Android (full phone reboot)"
     print "2.) Install APK"
@@ -43,10 +44,12 @@ def buildMenu():
         time.sleep(5)
         buildMenu()
     elif (selection == 4):
+        utility.buildUtilityMenu()
         print "Returning to menu..."
         time.sleep(5)
         buildMenu()
     elif (selection == 5):
+        
         print "Returning to menu..."
         time.sleep(5)
         buildMenu()
