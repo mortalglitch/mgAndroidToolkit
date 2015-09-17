@@ -5,6 +5,7 @@ import time
 import installapk
 import uninstallapk
 import utility
+import lon
 
 def buildMenu():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -49,13 +50,17 @@ def buildMenu():
         time.sleep(5)
         buildMenu()
     elif (selection == 5):
-        
+        lon.buildLoNMenu()
         print "Returning to menu..."
         time.sleep(5)
         buildMenu()
     elif (selection == 6):
         print "Goodbye"
         exit()
+    else:
+        print "Please make a valid selection."
+        time.sleep(2)
+        buildInstallMenu()
 
 
 #cmd = "ls -l"
