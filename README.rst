@@ -1,11 +1,22 @@
 Currently early work in progress mgAndroidToolkit.
 The goal of this will be to design a quick set of utility scripts for
 interacting with Android based devices.
+The documentation on this is all currently contained within this README with little
+formatting. As I add more I will spruce it up a bit and add more individual documentation
+for the more advanced scripts.
+
+USE AT YOUR OWN RISK.
 
 Current Requirements:
 - ADB (Android Debugging Bridge): This must be set up as a path export or environment variable.
 - Python 2.7.6: This is the version I used but it may be compatible with other variants of Python 2
 - Currently the attached device will have to have the ADB RSA key accepted prior to use.
+
+How-To use various scripts:
+Main Menu (mgATK.py) - from cmd/terminal start at the root directory of the project. You should see /data /mgATK /test /docs /bin README.rst and setup.py.
+To launch this project in it's current state you will want to be here and run 'python mgATK/mgATK.py' to start the menu.
+APK Installer (installapk.py) - drop an apk into the data/apk/ folder and the script should recognize it. Once recognized
+the installer should be able to adb push the file over to the Android device.
 
 Notes:
 It's far from complete and I will probably end up rewriting the structure several times.

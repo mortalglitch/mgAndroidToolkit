@@ -4,11 +4,12 @@ import subprocess
 
 def buildInstallMenu():
     os.system('cls' if os.name == 'nt' else 'clear')
+    selection = ''
     print "APK Installer Module for mgAndroidToolkit"
     print "\nOptions:"
     print "1.)Choose APK"
     print "2.)Exit to main menu"
-    selection = input("Selection #: ")
+    selection = int(raw_input("Selection #: "))
     if(selection == 1):
         chooseAPK()
         buildInstallMenu()
@@ -28,6 +29,24 @@ def chooseAPK():
     for result in cmdresult:
         print str(total) + ".) " + result
         total += 1
-    apkchoice = input("APK Selection: ")
+    apkchoice = int(raw_input("APK Selection: "))
     print cmdresult[apkchoice-1] + " was selected."
-    begininstall = input("Begin Install (y/N): ")
+    begininstall = raw_input("Begin Install (y/N): ")
+    if(begininstall.lower() == "y"):
+        print "Starting Install please wait."
+        print ("adb install " + "data/apk/" + cmdresult[apkchoice-1])
+        installcmd = ("adb install " + "data/apk/" + cmdresult[apkchoice-1])
+        installresult = subprocess.check_output(installcmd.split())
+        print installresult.split('\r\n')
+        print "Install Complete"
+        time.sleep(5)
+        buildInstallMenu()
+        #do install like stuff
+    elif(begininstall.lower() == "n"):
+        print "Stopping installer"
+        time.sleep(2)
+        buildInstallMenu()
+    else:
+        print "Invalid Operation."
+        time.sleep(2)
+        buildInstallMenu()
