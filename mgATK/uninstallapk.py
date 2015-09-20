@@ -11,6 +11,7 @@ def buildUninstallMenu():
     if(selection == 1):
         # Need to write the removal tool
         print "TODO add removal tool"
+        print "Sorry but at this time the uninstaller is incomplete."
         time.sleep(5)
     if(selection == 2):
         pass
