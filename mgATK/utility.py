@@ -17,6 +17,10 @@ def buildUtilityMenu():
         pass
 
 def simpleTextPusher():
+    print "\n\n:Please note: This method of pushing text cannot handle much data"
+    print ":I will be releasing a new version soon intended to long data pushes."
+    print ":Current limit : 384 characters from my last test."
+    print ":Each space counts as two as it translates to %s\n\n"
     rawText = raw_input("Enter text to push: ")
     cleanText = rawText.replace(' ', '%s')
     pushtextcmd = ("adb shell input keyboard text " + '"' + cleanText + '"')
