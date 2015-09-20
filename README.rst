@@ -18,6 +18,9 @@ To launch this project in it's current state you will want to be here and run 'p
 APK Installer (installapk.py) - drop an apk into the data/apk/ folder and the script should recognize it. Once recognized
 the installer should be able to adb push the file over to the Android device.
 
+Utility:
+Push text as keyboard: This script will type to Android as if a keyboard hardware or external was connected. For most common use activate while in a text field.
+
 Notes:
 It's far from complete and I will probably end up rewriting the structure several times.
 Initial design will all primarily be based on calling everything from the mgATK.py
