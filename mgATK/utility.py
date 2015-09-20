@@ -6,14 +6,20 @@ def buildUtilityMenu():
     os.system('cls' if os.name == 'nt' else 'clear')
     print "Android Utility Module for mgAndroidToolkit"
     print "\nOptions:"
-    print "1.)Push Text as Keyboard"
-    print "2.)Exit to main menu"
+    print "1.) Push Text as Keyboard"
+    print "2.) Tap target location"
+    print "3.) Exit to main menu"
     selection = input("Selection #: ")
     if(selection == 1):
         # Need to write the keyboard tool
         simpleTextPusher()
-        time.sleep(5)
+        time.sleep(2)
+        buildUtilityMenu()
     if(selection == 2):
+        simpleTapper()
+        time.sleep(2)
+        buildUtilityMenu()
+    if(selection == 3):
         pass
 
 def simpleTextPusher():
@@ -26,3 +32,11 @@ def simpleTextPusher():
     pushtextcmd = ("adb shell input keyboard text " + '"' + cleanText + '"')
     pushtextresult = subprocess.check_output(pushtextcmd.split())
     print pushtextresult.split('\r\n')
+
+def simpleTapper():
+    print "\n\n: This script will tap the screen will tap the screen in a certain area.\n"
+    tapX = raw_input("Enter X position: ")
+    tapY = raw_input("Enter Y position: ")
+    tapcmd = ("adb shell input tap " + tapX + " " + tapY)
+    tapcmdresult = subprocess.check_output(tapcmd.split())
+    print tapcmdresult.split('\r\n')
