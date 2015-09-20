@@ -9,7 +9,7 @@ import lon
 
 def buildMenu():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print "Welcome to the mgAndroidToolkit V.09171501"
+    print "Welcome to the mgAndroidToolkit V.09201501"
     print "This system will automate some simple functionality for Android Testing\n"
     print "Options: (Not all are functioning yet and just act as placeholders)\n"
     print "1.) Reboot Android (full phone reboot)"
@@ -20,18 +20,7 @@ def buildMenu():
     print "6.) Exit mgATK"
     selection = input("Selection #: ")
     if(selection == 1):
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print "Pushing reboot. Please wait..."
-        cmd = "adb reboot"
-
-        try:
-            result = subprocess.check_output(cmd.split())
-            print result.split('\r\n')
-        except:
-            print "Error in running command"
-            pass
-
-        print "Returning to menu..."
+        rebootDevice()
         time.sleep(5)
         buildMenu()
     elif (selection == 2):
@@ -63,9 +52,19 @@ def buildMenu():
         buildInstallMenu()
 
 
-#cmd = "ls -l"
-#s = subprocess.check_output(cmd.split())
-#print s.split('\r\n')
+def rebootDevice():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print "Pushing reboot. Please wait..."
+    cmd = "adb reboot"
+
+    try:
+        result = subprocess.check_output(cmd.split())
+        print result.split('\r\n')
+    except:
+        print "Error in running command"
+        pass
+
+    print "Returning to menu..."
 
 def main():
     #setup basic stuff
