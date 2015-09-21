@@ -1,4 +1,6 @@
+import itertools
 import os
+import pickle
 import sys
 import time
 
@@ -38,4 +40,10 @@ def simplePIN():
             print("Please input a valid number.")
             simplePIN()
         pinmaxlength = int(simplepinlength)
-        
+        print "Starting PIN generation please wait (this may take a few minutes)"
+        print "Based upon the number of digits"
+        data = list(itertools.product([0,1,2,3,4,5,6,7,8,9], repeat = pinmaxlength))
+        pin_file = open("data/tables/pinlist.p", "wb")
+        pickle.dump(data, pin_file)
+        pin_file.close()
+        print "pinlist.p has been generated in data/tables"
