@@ -20,7 +20,11 @@ How-To use various scripts:
 
 Utility:
 - Push text as keyboard: This script will type to Android as if a keyboard hardware or external was connected. For most common use activate while in a text field.
-- Tap target location: This script will have you put in an x and a y coordinate to tap the screen in that location. This can be used should the touch screen stop responding. 
+- Tap target location: This script will have you put in an x and a y coordinate to tap the screen in that location. This can be used should the touch screen stop responding.
+
+LoN (Lair of Naughty):
+- Joking title but will include some recovery options for Android Devices.
+- Build Tables - This set of scripts can be used to generate tables needed for various other utilities within the mgAndroidToolkit.
 
 Notes:
 It's far from complete and I will probably end up rewriting the structure several times.
